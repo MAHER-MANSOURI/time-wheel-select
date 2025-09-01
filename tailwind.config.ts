@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -67,6 +68,17 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-luxe': 'var(--gradient-primary)',
+				'gradient-dark': 'var(--gradient-dark)'
+			},
+			boxShadow: {
+				'luxe': 'var(--shadow-luxe)',
+				'glow': 'var(--shadow-glow)'
+			},
+			fontFamily: {
+				'mono': ['JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'monospace']
 			},
 			keyframes: {
 				'accordion-down': {
