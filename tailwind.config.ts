@@ -70,15 +70,7 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			backgroundImage: {
-				'gradient-luxe': 'var(--gradient-primary)',
-				'gradient-dark': 'var(--gradient-dark)'
-			},
-			boxShadow: {
-				'luxe': 'var(--shadow-luxe)',
-				'glow': 'var(--shadow-glow)'
-			},
-			fontFamily: {
-				'mono': ['JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'monospace']
+				'gradient-primary': 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary)))'
 			},
 			keyframes: {
 				'accordion-down': {
