@@ -84,6 +84,14 @@ export const Calendar = ({ selectedDate, onDateSelect }: CalendarProps) => {
     });
   };
 
+  const selectMonth = (month: number) => {
+    setCurrentDate(prevDate => {
+      const newDate = new Date(prevDate);
+      newDate.setMonth(month);
+      return newDate;
+    });
+  };
+
   const days = getDaysInMonth(currentDate);
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth();
@@ -105,9 +113,25 @@ export const Calendar = ({ selectedDate, onDateSelect }: CalendarProps) => {
         </Button>
         
         <div className="flex items-center gap-2">
-          <h2 className="text-lg font-semibold">
-            {monthNames[currentMonth]}
-          </h2>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm" className="h-8 px-2">
+                {monthNames[currentMonth]}
+                <ChevronDown className="h-3 w-3 ml-1" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="max-h-40 overflow-y-auto">
+              {monthNames.map((month, index) => (
+                <DropdownMenuItem
+                  key={month}
+                  onClick={() => selectMonth(index)}
+                  className={currentMonth === index ? "bg-accent" : ""}
+                >
+                  {month}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
           
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
